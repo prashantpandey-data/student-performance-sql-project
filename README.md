@@ -1,115 +1,97 @@
- # Student Performance Analysis — SQL Project
+# Student Performance Analysis using SQL
 
-## 📌 Project Overview
+A SQL data analysis project in MySQL that analyzes student performance using student details, subject-wise marks and attendance data.
 
-This project analyzes student academic performance using SQL.
+## Project Objective
 
-The project contains student details, subjects, marks, and attendance data.
-SQL queries are used to analyze student performance and generate meaningful insights.
+Answer practical questions such as:
+- Which students and cities perform best?
+- Which subjects have the highest and lowest average marks?
+- Which students need improvement?
+- How can students be ranked and grouped by performance level?
 
----
-
-## 🎯 Project Objectives
-
-The main objectives of this project are:
-
-- Analyze student performance
-- Calculate total and average marks
-- Identify high and low performing students
-- Analyze subject-wise performance
-- Analyze city-wise student performance
-- Analyze attendance and marks
-- Rank students based on their performance
-- Generate a complete student performance report
-
----
-
-## 🛠️ Tools & Technologies
+## Tools Used
 
 - MySQL
-- MySQL Workbench
-- SQL
+- Microsoft PowerPoint (project presentation)
 
----
+## Dataset
 
-## 🗄️ Database Structure
+The database `student_performance` has 3 tables (sample data):
 
-**Database Name:** `student_performance`
+| Table | Description | Rows |
+|-------|-------------|------|
+| `students` | student_id, name, city, gender | 20 |
+| `subjects` | subject_id, subject_name (SQL, Python, Excel, Power BI, Statistics) | 5 |
+| `marks` | mark_id, student_id, subject_id, marks, attendance | 100 |
 
-The project contains 3 tables:
+Cities: Delhi, Mumbai, Noida, Lucknow
 
-### 1. Students
+## SQL Concepts Used
 
-Stores student information.
+- `SELECT`, `WHERE`, `ORDER BY`
+- Aggregate functions: `COUNT`, `SUM`, `AVG`, `MAX`, `MIN`
+- `GROUP BY` and `HAVING`
+- `INNER JOIN`
+- `CASE WHEN`
+- Subqueries
+- CTEs (`WITH`)
+- `EXISTS`
+- `UNION`
+- Window functions: `RANK()`, `LAG()`
 
-**Columns:**
-- `student_id`
-- `name`
-- `city`
-- `gender`
+## Analysis Covered (30 queries)
 
-### 2. Subjects
+| Level | Questions |
+|-------|-----------|
+| Basic (1-5) | Total students and subjects, record count per subject, average marks per subject |
+| Filtering and Joins (6-11) | Students scoring above 80 and above 90, students per city, average marks per city, highest mark per subject |
+| Aggregation (12-20) | Total, average, highest and lowest marks per student, `HAVING` filters, students scoring below 70 |
+| Advanced (21-30) | Performance levels with `CASE`, CTEs, subqueries, `EXISTS`, `UNION`, ranking with `RANK()`, previous-record comparison with `LAG()`, and a final complete performance report |
 
-Stores subject information.
+The final query (Analysis 30) combines everything into one report: total, average, highest and lowest marks, performance level, overall rank and previous student's total.
 
-**Columns:**
-- `subject_id`
-- `subject_name`
+### Performance Levels
 
-### 3. Marks
+| Average Marks | Level |
+|---------------|-------|
+| 85 and above | Excellent |
+| 70 to 84 | Good |
+| Below 70 | Needs Improvement |
 
-Stores student performance data.
+## Key Insights
 
-**Columns:**
-- `mark_id`
-- `student_id`
-- `subject_id`
-- `marks`
-- `attendance`
+- The overall average across all 100 records is **83.3**.
+- **Excel** has the highest average (84.45) and **Python** the lowest (82.55).
+- **Mumbai** has the best city average (85.08) and **Noida** the lowest (82.24).
+- Top performers by total marks: **Pooja (468)**, **Priya (466)** and **Arjun (458)**.
+- 8 students are rated Excellent, 11 Good and 1 (Rahul) Needs Improvement.
+- 14 of 20 students have an average above 80.
+- Only 3 students (Priya, Arjun, Pooja) scored 95 or above in at least one subject.
+- 5 marks records are below 70, belonging to Rohit, Rahul and Vikas.
 
----
+## Project Structure
 
-## 🔗 Table Relationships
+```
+student-performance-sql-project/
+├── student_performance_analysis.sql
+├── Student_Performance_SQL_Project_Presentation.pptx
+└── README.md
+```
 
-The tables are connected using:
+## How to Run
 
-```text
-students.student_id → marks.student_id
-subjects.subject_id → marks.subject_id
+1. Install MySQL and open MySQL Workbench or the MySQL command line.
+2. Open `student_performance_analysis.sql`.
+3. Run the first section to create the database, tables and insert data.
+4. Run the analysis queries one by one and check the output.
 
+## Author
 
-📊 SQL Concepts Used
+**Prashant Pandey**
+Aspiring Data Analyst | MySQL | Excel | Power BI
 
-This project uses the following SQL concepts:
-
-SELECT
-WHERE
-ORDER BY
-GROUP BY
-HAVING
-Aggregate Functions
-INNER JOIN
-LEFT JOIN
-Subqueries
-CTE (Common Table Expressions)
-Window Functions
-ROW_NUMBER()
-RANK()
-DENSE_RANK()
-LAG()
-LEAD()
-CASE
-Filtering and Sorting
-🔍 Analysis Performed
-
-The project performs analysis related to:
-
-Student-wise performance
-Subject-wise performance
-City-wise performance
-Average marks
-Total marks
-Attendance analysis
-Student rankings
-High and low performers
-Performance comparison between students and subjects
+- GitHub: [prashantpandey-data](https://github.com/prashantpandey-data)
+- LinkedIn: [prashant-pandey](https://www.linkedin.com/in/prashant-pandey-39694b3b0)
+- LeetCode: [prashantpandey-data](https://leetcode.com/u/prashantpandey-data/)
+- 
